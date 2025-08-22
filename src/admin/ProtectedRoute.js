@@ -1,7 +1,29 @@
 import React from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
-export default function ProtectedRoute() {
-  const isAuthenticated = localStorage.getItem("adminToken");
-  return isAuthenticated ? <Outlet /> : <Navigate to="/admin-login" replace />;
-}
+const ProtectedRoute = ({ role }) => {
+  const location = useLocation();
+
+  // ✅ Get user from localStorage
+  const loggedUser = JSON.parse(localStorage.getItem("loggedUser") || "null");
+
+  // ✅ If no user, redirect to correct login
+  if (!loggedUser) {
+    return (
+      <Navigate
+        to={role === "admin" ? "/admin-login" : "/login"}
+        state={{ from: location }}
+        replace
+      />
+    );
+  }
+
+  // ✅ If role mismatch, block access
+  if (loggedUser.role !== role) {
+    return <Navigate to="/" replace />;
+  }
+
+  return <Outlet />; // ✅ Render child route
+};
+
+export default ProtectedRoute;

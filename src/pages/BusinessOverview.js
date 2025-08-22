@@ -103,6 +103,10 @@ const BusinessOverview = () => {
                             <h1 className='text-[#1d92f9ff] text-xl font-bold '>12-18 mo</h1>
                             <p className='text-gray-500 text-sm font-semibold'>Break Even</p>
                         </div>
+                        <div className='bg-[#b9deffff] py-1'>
+                            <h1 className='text-[#1d92f9ff] text-xl font-bold '>Area Requirements</h1>
+                            <p className='text-gray-500 text-sm font-semibold'>1000 - 2000 sq.ft</p>
+                        </div>
                     </div>
                     <div className='space-y-2 text-center'>
                         <div className='bg-[#cbf7d2ff] py-1 '>
@@ -112,6 +116,10 @@ const BusinessOverview = () => {
                         <div className='bg-[#cbf7d2ff] py-1'>
                             <h1 className='text-[#29d849ff] text-xl font-bold '>4</h1>
                             <p className='text-gray-500 text-sm font-semibold'>Locations</p>
+                        </div>
+                        <div className='bg-[#cbf7d2ff] py-1'>
+                            <h1 className='text-[#29d849ff] text-xl font-bold '>2025</h1>
+                            <p className='text-gray-500 text-sm font-semibold'>Establishment Year</p>
                         </div>
                     </div>
                 </div>

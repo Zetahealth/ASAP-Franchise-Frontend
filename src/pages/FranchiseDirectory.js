@@ -191,15 +191,19 @@ function FranchiseDirectory() {
             <div className="mt-6 flex justify-center">
               <button
                 onClick={() => setShowForm(true)}
-                className="bg-[#943032ff] text-white px-20 py-3 rounded-full font-semibold text-lg hover:bg-red-700 transition"
+                className="flex items-center text-lg font-semibold px-20 py-3 bg-[#943032ff] text-white rounded-full 
+             transition-all duration-300 ease-out 
+             transform hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:bg-white hover:text-[#943032ff]
+             hover:border-2 border-[#943032ff]
+             active:scale-95"
               >
-                Send
-              </button>
-            </div>
+              Send
+            </button>
           </div>
         </div>
-      </section>
     </div>
+      </section >
+    </div >
   )
 }
 

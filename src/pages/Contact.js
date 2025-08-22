@@ -30,112 +30,116 @@ function Contact() {
         </div>
       </section>
       {/*Why ASAP section */}
-<section className="w-full pb-16 px-4 md:px-0 mx-auto max-w-7xl">
-  <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
-    {/* Left Content */}
-    <div className="md:col-span-7 ">
-      <h1 className="text-4xl md:text-5xl text-[#943032ff] font-bold">ASAP FRANCHISE</h1>
+      <section className="w-full pb-16 px-4 md:px-0 mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
+          {/* Left Content */}
+          <div className="md:col-span-7 ">
+            <h1 className="text-4xl md:text-5xl text-[#943032ff] font-bold">ASAP FRANCHISE</h1>
 
-      <div className="text-[#943032ff] text-2xl font-bold pt-16">
-        <p>USA Headquarters:</p>
-        <ul className="list-none list-inside text-gray-800 text-lg font-semibold pr-16">
-          <li>1234 Business Parkway</li>
-          <li>Suite 500</li>
-          <li>Orlando, FL 32801</li>
-          <li>United States of America</li>
-        </ul>
-      </div>
+            <div className="text-[#943032ff] text-2xl font-bold pt-16">
+              <p>USA Headquarters:</p>
+              <ul className="list-none list-inside text-gray-800 text-lg font-semibold pr-16">
+                <li>1234 Business Parkway</li>
+                <li>Suite 500</li>
+                <li>Orlando, FL 32801</li>
+                <li>United States of America</li>
+              </ul>
+            </div>
 
-      <div className="text-[#943032ff] text-2xl font-bold pt-10">
-        <p>Philippines Branch Office:</p>
-        <ul className="list-none list-inside text-gray-800 text-lg font-semibold pr-16">
-          <li>Unit 12, Tower B, Business Center</li>
-          <li>Makati City, Metro Manila</li>
-          <li>Philippines</li>
-        </ul>
-      </div>
+            <div className="text-[#943032ff] text-2xl font-bold pt-10">
+              <p>Philippines Branch Office:</p>
+              <ul className="list-none list-inside text-gray-800 text-lg font-semibold pr-16">
+                <li>Unit 12, Tower B, Business Center</li>
+                <li>Makati City, Metro Manila</li>
+                <li>Philippines</li>
+              </ul>
+            </div>
 
-      <div className="text-[#943032ff] text-xl font-bold pt-10 pr-16">
-        <p>Email:</p>
-        <span className="text-gray-800 text-lg font-semibold">info@asapfrancise.com</span>
-      </div>
-    </div>
-
-    {/* Right Content - Form */}
-    <div className="md:col-span-5">
-      <h2 className="text-4xl font-bold mt-10 pb-4">Interested? Get in Touch!</h2>
-
-      <div className="">
-        <p className="text-xl font-semibold">Fill out the form below and our team will get back to you within 24 hours.</p>
-      </div>
-
-      <div className="bg-[#943032ff] text-white rounded-lg shadow-lg p-6">
-        <h3 className="text-3xl font-semibold mb-2">Advertise your service with us</h3>
-        <p className="text-sm mb-4">
-          Fill out the form below to find out more about advertising your business with us.
-        </p>
-
-        <form className="space-y-4 bg-white rounded-xl text-black px-4 pb-6">
-          {/* Contact Information */}
-          <h3 className="text-xl font-bold pt-2">Contact Information</h3>
-          <div>
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
-            />
-          </div>
-          <div>
-            <input
-              type="Email Address"
-              placeholder="Enter your email"
-              className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
-            />
+            <div className="text-[#943032ff] text-xl font-bold pt-10 pr-16">
+              <p>Email:</p>
+              <span className="text-gray-800 text-lg font-semibold">info@asapfrancise.com</span>
+            </div>
           </div>
 
-          <h3 className="text-xl font-bold mb-2">Company Information</h3>
-          <div>
-            <input
-              type="text"
-              placeholder="Company Name"
-              className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Location"
-              className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
-            />
-          </div>
+          {/* Right Content - Form */}
+          <div className="md:col-span-5">
+            <h2 className="text-4xl font-bold mt-10 pb-4">Interested? Get in Touch!</h2>
 
-          <h3 className="text-xl font-bold mb-2">Comments</h3>
-          <div>
-            <textarea
-              placeholder="Your Message..."
-              className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
-              rows={3}
-            ></textarea>
-          </div>
+            <div className="">
+              <p className="text-xl font-semibold">Fill out the form below and our team will get back to you within 24 hours.</p>
+            </div>
 
-          <button
-            type="submit"
-            className="w-full bg-[#943032ff] text-lg text-white py-2 rounded-full font-medium"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="bg-[#943032ff] text-white rounded-lg shadow-lg p-6">
+              <h3 className="text-3xl font-semibold mb-2">Advertise your service with us</h3>
+              <p className="text-sm mb-4">
+                Fill out the form below to find out more about advertising your business with us.
+              </p>
+
+              <form className="space-y-4 bg-white rounded-xl text-black px-4 pb-6">
+                {/* Contact Information */}
+                <h3 className="text-xl font-bold pt-2">Contact Information</h3>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="Email Address"
+                    placeholder="Enter your email"
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Phone Number"
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+                  />
+                </div>
+
+                <h3 className="text-xl font-bold mb-2">Company Information</h3>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Company Name"
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Location"
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+                  />
+                </div>
+
+                <h3 className="text-xl font-bold mb-2">Comments</h3>
+                <div>
+                  <textarea
+                    placeholder="Your Message..."
+                    className="w-full px-4 py-2 rounded-md border border-gray-300 text-black"
+                    rows={3}
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-[#943032ff] text-lg items-center justify-center text-white py-2 rounded-full font-medium
+                  flex  text-lg font-semibold bg-[#943032ff] text-white rounded-full 
+             transition-all duration-300 ease-out 
+             hover:shadow-lg hover:bg-white hover:text-[#943032ff]
+             hover:border-2 border-[#943032ff]"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ExploreIndusties section */}
       <ExploreByIndustry />

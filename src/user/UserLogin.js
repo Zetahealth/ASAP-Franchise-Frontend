@@ -4,19 +4,17 @@ import { toast, ToastContainer } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function AdminLogin() {
+export default function UserLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPwd, setShowPwd] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
   const toastTimeoutRef = useRef(null);
   const navigate = useNavigate();
-  // Dummy hardcoded credentials
-  const DUMMY_ADMIN = {
-    email: "admin@asap.com",
-    password: "Admin@123",
-  };
+
+  const storedUser = JSON.parse(localStorage.getItem("registeredUser"));
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -38,27 +36,69 @@ export default function AdminLogin() {
     setTimeout(() => {
       setLoading(false);
 
-      if (email === DUMMY_ADMIN.email && password === DUMMY_ADMIN.password) {
-        // ✅ Store token (optional)
-        localStorage.setItem("adminToken", "dummy-token-123");
+      // ✅ Dummy Owner account
+      const dummyOwner = {
+        email: "owner@asap.com",
+        password: "Owner@123",
+        username: "franchise_owner",
+        firstName: "John",
+        lastName: "Doe",
+        role: "owner",
+      };
 
-        // ✅ Store loggedUser for ProtectedRoute
-        localStorage.setItem(
-          "loggedUser",
-          JSON.stringify({ email: DUMMY_ADMIN.email, role: "admin" })
-        );
+      if (email === dummyOwner.email && password === dummyOwner.password) {
+        localStorage.setItem("authToken", "dummy-token-123");
+        localStorage.setItem("loggedUser", JSON.stringify(dummyOwner));
 
-        toast.success("✅ Login successful!");
+        if (rememberMe) {
+          localStorage.setItem("rememberedEmail", email);
+        } else {
+          localStorage.removeItem("rememberedEmail");
+        }
 
+        toast.success("Owner login successful!");
         toastTimeoutRef.current = setTimeout(() => {
-          navigate("/admin"); // Use useNavigate instead of window.location.href
+          navigate(`/`); // 👈 always go Home
         }, 1200);
+
+        return;
       }
-      else {
+
+      // ✅ Check for normal registeredUser
+      if (
+        storedUser &&
+        email === storedUser.email &&
+        password === storedUser.password
+      ) {
+        const userData = { ...storedUser, role: "user" };
+        localStorage.setItem("authToken", "dummy-token-123");
+        localStorage.setItem("loggedUser", JSON.stringify(userData));
+
+        if (rememberMe) {
+          localStorage.setItem("rememberedEmail", email);
+        } else {
+          localStorage.removeItem("rememberedEmail");
+        }
+
+        toast.success("Login successful!");
+        toastTimeoutRef.current = setTimeout(() => {
+          navigate(`/`); // 👈 always go Home
+        }, 1200);
+      } else {
         setError("Invalid email or password.");
       }
     }, 1200);
   };
+
+
+  // Auto-fill email if "Remember Me" was checked
+  useEffect(() => {
+    const remembered = localStorage.getItem("rememberedEmail");
+    if (remembered) {
+      setEmail(remembered);
+      setRememberMe(true);
+    }
+  }, []);
 
   // Cleanup timeout
   useEffect(() => {
@@ -75,9 +115,10 @@ export default function AdminLogin() {
       <ToastContainer position="top-right" autoClose={1000} hideProgressBar />
 
       <div className="bg-white shadow-lg rounded-2xl w-full max-w-md p-8">
+        <h2 className=" text-center text-4xl font-bold text-[#8b2f2f] py-6">ASAP Franchise</h2>
         <div className="flex items-center justify-center mb-6">
-          <LogIn className="text-[#8b2f2f] mr-2" size={40} />
-          <h2 className="text-2xl font-bold text-gray-800">Admin Login</h2>
+          <LogIn className="text-[#8b2f2f] mr-2" size={32} />
+          <h2 className="text-2xl font-bold text-gray-800">Login</h2>
         </div>
 
         {error && (
@@ -117,6 +158,25 @@ export default function AdminLogin() {
             </button>
           </div>
 
+          {/* Remember Me */}
+          <div className="flex items-center justify-between">
+            <label className="flex items-center gap-2 text-sm text-gray-600">
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={() => setRememberMe(!rememberMe)}
+                className="w-4 h-4 text-[#8b2f2f] border-gray-300 rounded"
+              />
+              Remember Me
+            </label>
+            <Link
+              to="/user/forgot-password"
+              className="text-[#8b2f2f] text-sm hover:underline"
+            >
+              Forgot Password?
+            </Link>
+          </div>
+
           <button
             type="submit"
             disabled={loading}
@@ -131,14 +191,27 @@ export default function AdminLogin() {
           </button>
         </form>
 
+        {/* Registration Link */}
         <div className="mt-4 text-sm text-center">
-          <Link
-            to="/admin/forgot-password"
-            className="text-[#8b2f2f] hover:underline"
-          >
-            Forgot Password?
-          </Link>
+          <p>
+            Don’t have an account?{" "}
+            <Link to="/registration" className="text-[#8b2f2f] hover:underline font-semibold">
+              Register here
+            </Link>
+          </p>
         </div>
+
+        {/* Terms & Conditions */}
+        <p className="text-xs text-gray-500 mt-4 text-center">
+          By logging in, you agree to our{" "}
+          <Link to="/terms" className="text-[#8b2f2f] hover:underline">
+            Terms & Conditions
+          </Link>{" "}
+          and{" "}
+          <Link to="/privacy" className="text-[#8b2f2f] hover:underline">
+            Privacy Policy
+          </Link>.
+        </p>
       </div>
     </div>
   );

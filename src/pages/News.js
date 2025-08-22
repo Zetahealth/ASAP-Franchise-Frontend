@@ -93,27 +93,9 @@ function News() {
       </section>
       {/*News section */}
       <section className=" px-2  max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-          Franchise News
-        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-          {franchiseNews.map((item, idx) => (
-            <div key={idx} className="rounded-xl overflow-hidden">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-[300px] object-cover rounded-xl mb-4"
-              />
-              <div className="p-4">
-                <h3 className="pr-16 text-2xl font-semibold mb-2">{item.title}</h3>
-                <div className="flex items-center text-gray-500 text-lg">
-                  <Clock className="w-8 h-8 mr-2" />
-                  {item.date}
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className=''>
+          <NewsCompinent />
         </div>
       </section>
       {/*email section */}
@@ -144,7 +126,11 @@ function News() {
             <div className="mt-6 flex justify-center">
               <button
                 // onClick={() => setShowForm(true)}
-                className="bg-[#943032ff] text-white px-20 py-3 rounded-full font-semibold text-lg hover:bg-red-700 transition"
+                className="flex items-center text-lg font-semibold px-20 py-3 bg-[#943032ff] text-white rounded-full 
+             transition-all duration-300 ease-out 
+             transform hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:bg-white hover:text-[#943032ff]
+             hover:border-2 border-[#943032ff]
+             active:scale-95"
               >
                 Send
               </button>

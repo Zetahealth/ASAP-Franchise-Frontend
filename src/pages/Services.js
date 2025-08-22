@@ -224,7 +224,11 @@ const Services = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#943032ff] text-lg text-white py-2 rounded-full font-medium"
+                  className="w-full bg-[#943032ff] text-lg items-center justify-center text-white py-2 rounded-full font-medium
+                  flex  text-lg font-semibold bg-[#943032ff] text-white rounded-full 
+             transition-all duration-300 ease-out 
+             hover:shadow-lg hover:bg-white hover:text-[#943032ff]
+             hover:border-2 border-[#943032ff]"
                 >
                   Submit
                 </button>
@@ -240,7 +244,7 @@ const Services = () => {
 
       {/*News section */}
       <div className='pt-16'>
-      <NewsCompinent />
+        <NewsCompinent />
       </div>
     </div >
   )

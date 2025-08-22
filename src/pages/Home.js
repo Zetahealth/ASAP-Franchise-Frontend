@@ -213,7 +213,10 @@ function Home() {
           <div className="mt-6 flex justify-center">
             <button
               onClick={handleSearch}
-              className="bg-white text-[#943032ff] px-6 py-3 text-xl rounded-full font-semibold text-sm hover:bg-gray-100 transition"
+              className=" flex items-center text-xl font-semibold px-8 py-3 bg-[#943032ff] text-white rounded-full 
+             transition-all duration-300 ease-out 
+             transform hover:scale-105 hover:-translate-y-1 hover:shadow-lg border-2 border-white hover:bg-white hover:text-[#943032ff]
+             active:scale-95"
             >
               FIND YOUR FRANCHISE
             </button>
@@ -222,47 +225,50 @@ function Home() {
       </div>
 
       {/*featured Franchise */}
-                <div className="hidden sm:block pt-10 w-full max-w-7xl px-4 mx-auto">
-            <div className="bg-white text-center rounded-xl p-4 grid grid-cols-1 md:grid-cols-3 gap-4 shadow-lg border-2 border-gray-800">
-              <select
-                className="w-full px-4 py-2 border rounded-full text-gray-700"
-                value={industry}
-                onChange={(e) => setIndustry(e.target.value)}
-              >
-                <option>Industry</option>
-                <option value="food">Food</option>
-                <option value="retail">Retail</option>
-              </select>
-              <select
-                className="w-full px-4 py-2 border rounded-full text-gray-700"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-              >
-                <option>Location</option>
-                <option value="mumbai">Mumbai</option>
-                <option value="delhi">Delhi</option>
-              </select>
-              <select
-                className="w-full px-4 py-2 border rounded-full text-gray-700"
-                value={investment}
-                onChange={(e) => setInvestment(e.target.value)}
-              >
-                <option>Investment</option>
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-              </select>
-            </div>
+      <div className="hidden sm:block pt-10 w-full max-w-7xl px-4 mx-auto">
+        <div className="bg-white text-center rounded-xl p-4 grid grid-cols-1 md:grid-cols-3 gap-4 shadow-lg border-2 border-gray-800">
+          <select
+            className="w-full px-4 py-2 border rounded-full text-gray-700"
+            value={industry}
+            onChange={(e) => setIndustry(e.target.value)}
+          >
+            <option>Industry</option>
+            <option value="food">Food</option>
+            <option value="retail">Retail</option>
+          </select>
+          <select
+            className="w-full px-4 py-2 border rounded-full text-gray-700"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          >
+            <option>Location</option>
+            <option value="mumbai">Mumbai</option>
+            <option value="delhi">Delhi</option>
+          </select>
+          <select
+            className="w-full px-4 py-2 border rounded-full text-gray-700"
+            value={investment}
+            onChange={(e) => setInvestment(e.target.value)}
+          >
+            <option>Investment</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
 
-            <div className="mt-4 flex justify-center">
-              <button
-                onClick={handleSearch}
-                className="bg-[#943032ff] text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-red-800 transition"
-              >
-                FIND YOUR FRANCHISE
-              </button>
-            </div>
-          </div>
+        <div className="mt-4 flex justify-center">
+          <button
+            onClick={handleSearch}
+            className="flex items-center text-2xl font-semibold px-8 py-3 bg-[#943032ff] text-white rounded-full 
+             transition-all duration-300 ease-out 
+             transform hover:scale-105 hover:-translate-y-1 hover:shadow-lg 
+             active:scale-95"
+          >
+            FIND YOUR FRANCHISE
+          </button>
+        </div>
+      </div>
       <section className="py-12 px-4 max-w-7xl mx-auto">
         <h2 className="text-5xl font-bold text-center mb-4">Featured Franchise</h2>
         <div className="w-24 h-1 bg-[#943032ff] mx-auto mb-12 rounded-full" />
@@ -300,14 +306,19 @@ function Home() {
         </div>
         {/* Button */}
         <div className="mt-6 flex justify-center">
-          <button className="bg-[#943032ff] text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition">
+          <button className="flex items-center text-lg font-semibold px-8 py-3 bg-[#943032ff] text-white rounded-full 
+             transition-all duration-300 ease-out 
+             transform hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:bg-transparent hover:text-[#943032ff] 
+             hover:border-2 border-[#943032ff] 
+             active:scale-95"
+          >
             Search Franchise Directory
           </button>
         </div>
       </section>
 
       {/*Industry section*/}
-          <ExploreByIndustry/>
+      <ExploreByIndustry />
       {/*featured Videos */}
       <section className="py-12 px-2 max-w-7xl mx-auto">
         <h2 className="text-5xl font-bold text-center mb-4">Featured Videos</h2>
@@ -353,7 +364,12 @@ function Home() {
 
         {/* Button */}
         <div className="mt-6 flex justify-center">
-          <button className="bg-[#943032ff] text-white px-6 py-3 rounded-full font-semibold hover:bg-red-700 transition">
+          <button className="flex items-center text-lg font-semibold px-8 py-3 bg-[#943032ff] text-white rounded-full 
+             transition-all duration-300 ease-out 
+             transform hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:bg-transparent hover:text-[#943032ff] 
+             hover:border-2 border-[#943032ff] 
+             active:scale-95"
+          >
             Watch All Videos
           </button>
         </div>
@@ -379,7 +395,7 @@ function Home() {
               <input
                 type="text"
                 placeholder="Your Emails"
-                className="w-full px-4 py-2.5 rounded-full border focus:outline-none focus:ring-2 focus:ring-blue-400 text-black"
+                className="w-full px-4 py-2.5 rounded-full border focus:outline-none focus:ring-2 focus:ring-[#943032ff] text-black"
               />
             </div>
 
@@ -387,7 +403,12 @@ function Home() {
             <div className="mt-6 flex justify-center">
               <button
                 // onClick={() => setShowForm(true)}
-                className="bg-[#943032ff] text-white px-20 py-3 rounded-full font-semibold text-lg hover:bg-red-800 transition"
+                className="
+               flex items-center text-lg font-semibold px-20 py-3 bg-[#943032ff] text-white rounded-full 
+             transition-all duration-300 ease-out 
+             transform hover:scale-105 hover:-translate-y-1 hover:shadow-lg hover:bg-white hover:text-[#943032ff]
+             hover:border-2 border-[#943032ff]
+             active:scale-95"
               >
                 Send
               </button>
@@ -397,7 +418,7 @@ function Home() {
       </section>
 
       {/*News section */}
-          <NewsCompinent/>
+      <NewsCompinent />
 
 
     </div>
